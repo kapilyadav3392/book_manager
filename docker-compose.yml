@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:15
+    container_name: book_db
+    restart: always
+    environment:
+      POSTGRES_DB: BookManageDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: book_web
+    restart: always
+    command: >
+      sh -c "python manage.py migrate &&
+             gunicorn book_manager.wsgi:application --bind 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DEBUG: "False"
+      SECRET_KEY: "supersecretkey"
+      ALLOWED_HOSTS: "127.0.0.1,localhost"
+      DATABASE_NAME: BookManageDB
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: 123456
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+
+volumes:
+  postgres_data:

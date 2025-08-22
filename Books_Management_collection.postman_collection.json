@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "09323fe9-3ce6-41a7-8a9e-50f96b067fee",
+		"name": "Books_Management_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33497787"
+	},
+	"item": [
+		{
+			"name": "Token API",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1ODk0NDcxLCJpYXQiOjE3NTU4OTQxNzEsImp0aSI6Ijk2OTNmZTAwYjdlZjQ3MGJiYTQ5Y2MyZWZkM2QwMmYzIiwidXNlcl9pZCI6IjEifQ.uMA7iFyuCEgSc-Bztn9iCeqKQR2YVLIv_exqNaRpkBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"kapil\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1OTAwMjk0LCJpYXQiOjE3NTU4OTk5OTQsImp0aSI6IjU0M2IwZDMyZGVkMzQ5NjI4Yjk2NjVkNmVhMzFiNTY4IiwidXNlcl9pZCI6IjEifQ.ddP0JqDsyntWN0tWw4D2mkll-7yal_7uW2sL7F053WM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1OTAwMjk0LCJpYXQiOjE3NTU4OTk5OTQsImp0aSI6IjU0M2IwZDMyZGVkMzQ5NjI4Yjk2NjVkNmVhMzFiNTY4IiwidXNlcl9pZCI6IjEifQ.ddP0JqDsyntWN0tWw4D2mkll-7yal_7uW2sL7F053WM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Great Gatsby\",\r\n  \"author\": \"F. Scott Fitzgerald\",\r\n  \"published_date\": \"1925-04-10\",\r\n  \"is_available\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/books/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1OTAwMjk0LCJpYXQiOjE3NTU4OTk5OTQsImp0aSI6IjU0M2IwZDMyZGVkMzQ5NjI4Yjk2NjVkNmVhMzFiNTY4IiwidXNlcl9pZCI6IjEifQ.ddP0JqDsyntWN0tWw4D2mkll-7yal_7uW2sL7F053WM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Great Gatsby\",\r\n  \"author\": \"F. Scott Fitzgerald\",\r\n  \"published_date\": \"1925-04-10\",\r\n  \"is_available\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1OTAwMjk0LCJpYXQiOjE3NTU4OTk5OTQsImp0aSI6IjU0M2IwZDMyZGVkMzQ5NjI4Yjk2NjVkNmVhMzFiNTY4IiwidXNlcl9pZCI6IjEifQ.ddP0JqDsyntWN0tWw4D2mkll-7yal_7uW2sL7F053WM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU1OTAwOTcxLCJpYXQiOjE3NTU5MDA2NzEsImp0aSI6IjE1ZWQxNjVhZTk0NTQyZGFhZTRiMDg0Yjg2YmQxODBjIiwidXNlcl9pZCI6IjEifQ.VibNCoNmRMqnT_yDKFCqCHMBf-_HpobYo3K7ttoRW-U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/books/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"books",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
